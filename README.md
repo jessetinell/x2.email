@@ -1,4 +1,4 @@
-# xmin
+# x2.email
 Hey! 👋 
 
 ## Getting Started

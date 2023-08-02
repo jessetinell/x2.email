@@ -1,5 +1,5 @@
 {
-  "name": "xmin-email",
+  "name": "x2-email",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/node": "^20.4.5",
     "@types/react": "^18.2.17",
+    "sass": "^1.64.2",
     "typescript": "^5.1.6"
   }
 }

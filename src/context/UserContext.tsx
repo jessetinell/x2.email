@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import encryption from '@/utils/encryption';
 import CloudflareService from '@/services/cloudflare';
 
-const LOCAL_STORAGE_ACCOUNT_ID = "xmin-email-cloudflare_account_identifier";
-const LOCAL_STORAGE_ZONE_ID = "xmin-email-cloudflare_zone_identifier";
-const LOCAL_STORAGE_ACCESS_TOKEN = "xmin-email-cloudflare_access_token";
+const LOCAL_STORAGE_ACCOUNT_ID = "x2-email-cloudflare_account_identifier";
+const LOCAL_STORAGE_ZONE_ID = "x2-email-cloudflare_zone_identifier";
+const LOCAL_STORAGE_ACCESS_TOKEN = "x2-email-cloudflare_access_token";
 
 export const UserContext = React.createContext({
 

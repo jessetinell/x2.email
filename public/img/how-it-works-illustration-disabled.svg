@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 780 230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Artboard1" transform="matrix(1,0,0,1,-16.9694,-11.2381)">
+        <rect x="16.969" y="11.238" width="779.395" height="229.515" style="fill:none;"/>
+        <g transform="matrix(1,0,0,1,-20.5245,-120.25)">
+            <g transform="matrix(1.28592,0,0,1,-20.5349,16.6731)">
+                <path d="M259.778,135.229C259.778,130.386 256.72,126.455 252.955,126.455L55.088,126.455C51.322,126.455 48.265,130.386 48.265,135.229L48.265,174.948C48.265,179.79 51.322,183.722 55.088,183.722L252.955,183.722C256.72,183.722 259.778,179.79 259.778,174.948L259.778,135.229Z" style="fill:rgb(255,161,0);fill-opacity:0.15;stroke:black;stroke-opacity:0.12;stroke-width:1.27px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-10.62,-86.3131)">
+                <text x="79.92px" y="262.458px" style="font-family:'Poppins-Bold', 'Poppins';font-weight:700;font-size:16.667px;">github</text>
+                <text x="136.703px" y="262.458px" style="font-family:'Poppins-Regular', 'Poppins';font-size:16.667px;">@yourdomain.com</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,-20.5245,-43.5222)">
+            <g transform="matrix(1.28592,0,0,1,-20.5349,16.6731)">
+                <path d="M259.778,135.229C259.778,130.386 256.72,126.455 252.955,126.455L55.088,126.455C51.322,126.455 48.265,130.386 48.265,135.229L48.265,174.948C48.265,179.79 51.322,183.722 55.088,183.722L252.955,183.722C256.72,183.722 259.778,179.79 259.778,174.948L259.778,135.229Z" style="fill:rgb(255,0,0);fill-opacity:0.15;stroke:black;stroke-opacity:0.12;stroke-width:1.27px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-10.695,-86.1715)">
+                <text x="79.92px" y="262.458px" style="font-family:'Poppins-Bold', 'Poppins';font-weight:700;font-size:16.667px;fill-opacity:0.51;">twitter</text>
+                <text x="136.97px" y="262.458px" style="font-family:'Poppins-Regular', 'Poppins';font-size:16.667px;fill-opacity:0.51;">@yourdomain.com</text>
+            </g>
+            <g transform="matrix(1,0,0,0.931108,37.4939,62.7563)">
+                <rect x="19.759" y="116.066" width="236.478" height="2.386" style="fill:rgb(155,106,106);"/>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,478.109,-43.5222)">
+            <g transform="matrix(1.28592,0,0,1,-20.5349,16.6731)">
+                <path d="M259.778,135.229C259.778,130.386 256.72,126.455 252.955,126.455L55.088,126.455C51.322,126.455 48.265,130.386 48.265,135.229L48.265,174.948C48.265,179.79 51.322,183.722 55.088,183.722L252.955,183.722C256.72,183.722 259.778,179.79 259.778,174.948L259.778,135.229Z" style="fill:rgb(90,255,0);fill-opacity:0.15;stroke:black;stroke-opacity:0.12;stroke-width:1.27px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,20.9133,-86.3131)">
+                <text x="79.92px" y="262.458px" style="font-family:'Poppins-Bold', 'Poppins';font-weight:700;font-size:16.667px;">private@gmail.com</text>
+            </g>
+            <g transform="matrix(0.668416,0,0,0.668416,68.6808,171.761)">
+                <g transform="matrix(1,0,0,1,-15,-15)">
+                    <path d="M15,2C11.146,2 8,5.146 8,9L8,11L6,11C4.895,11 4,11.895 4,13L4,25C4,26.105 4.895,27 6,27L24,27C25.105,27 26,26.105 26,25L26,13C26,11.895 25.105,11 24,11L22,11L22,9C22,5.272 19.037,2.269 15.355,2.072C15.242,2.027 15.122,2.002 15,2ZM15,4C17.774,4 20,6.226 20,9L20,11L10,11L10,9C10,6.226 12.226,4 15,4Z" style="fill:rgb(67,100,63);fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,-20.5245,33.5199)">
+            <g transform="matrix(1.28592,0,0,1,-20.5349,16.6731)">
+                <path d="M259.778,135.229C259.778,130.386 256.72,126.455 252.955,126.455L55.088,126.455C51.322,126.455 48.265,130.386 48.265,135.229L48.265,174.948C48.265,179.79 51.322,183.722 55.088,183.722L252.955,183.722C256.72,183.722 259.778,179.79 259.778,174.948L259.778,135.229Z" style="fill:rgb(255,161,0);fill-opacity:0.15;stroke:black;stroke-opacity:0.12;stroke-width:1.27px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-9.40335,-86.3131)">
+                <text x="79.92px" y="262.458px" style="font-family:'Poppins-Bold', 'Poppins';font-weight:700;font-size:16.667px;">public</text>
+                <text x="133.703px" y="262.458px" style="font-family:'Poppins-Regular', 'Poppins';font-size:16.667px;">@yourdomain.com</text>
+            </g>
+        </g>
+        <g transform="matrix(0.266201,0,0,0.450531,222.81,29.9992)">
+            <path d="M315.117,220.62L315.117,211.633L478.95,211.633L459.816,200.328L486.555,200.328L513.293,216.126L486.555,231.925L459.816,231.925L478.95,220.62L315.117,220.62Z"/>
+        </g>
+        <g transform="matrix(1.0637,0,0,1.0637,393.96,127.371)">
+            <g transform="matrix(1,0,0,1,-12,-12)">
+                <clipPath id="_clip1">
+                    <rect x="0" y="0" width="24" height="24"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <path d="M24,20.188L15.685,11.979L23.885,3.697L20.188,-0L11.976,8.318L3.666,0.115L-0,3.781L8.321,12.021L0.115,20.334L3.781,24L12.018,15.682L20.303,23.885L24,20.188Z" style="fill:rgb(255,0,0);fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(0.980356,0.197234,-0.0888602,0.441681,19.1183,-98.5391)">
+            <path d="M315.117,220.62L315.117,211.633L504.151,211.633L499.057,200.328L506.175,200.328L513.293,216.126L506.175,231.925L499.057,231.925L504.151,220.62L315.117,220.62Z"/>
+        </g>
+        <g transform="matrix(0.980356,-0.197234,-0.0888602,-0.441681,19.1183,353.856)">
+            <path d="M315.117,220.62L315.117,211.633L504.151,211.633L499.057,200.328L506.175,200.328L513.293,216.126L506.175,231.925L499.057,231.925L504.151,220.62L315.117,220.62Z"/>
+        </g>
+    </g>
+</svg>
