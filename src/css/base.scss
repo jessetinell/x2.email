@@ -1,9 +1,28 @@
 body{
-border-top:4px solid orange;
+    &:before{
+        content: " ";
+        height: 4px;
+        display: block;
+        background: linear-gradient(270deg, orange, yellow);
+        background-size: 200% 200%;
+        animation: gradientAnimation 6s ease-in-out infinite;
+    }
+}
+
+h1{
+    margin: 1.2em 0 .5em;
+    font-size: 2.5em;
+    font-weight: 900;
+}
+
+h2{
+    margin: 2em 0 .5em;
+    font-size: 1.8em;
+    font-weight: 700;
 }
 
 h3{
-    margin: 2em 0 .2em;
+    margin: 2em 0 .5em;
     font-size: 1.3em;
     font-weight: 700;
 }
@@ -11,3 +30,9 @@ h3{
 main{
     min-height: 70vh;
 }
+
+@keyframes gradientAnimation {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }

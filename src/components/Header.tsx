@@ -1,9 +1,10 @@
 "use client"
-import { Box, Button, Container, Flex, HStack, Text } from '@chakra-ui/react'
+import { Link, Box, Button, Container, Flex, HStack, Icon, Text } from '@chakra-ui/react'
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from '@/context/UserContext';
-import Link from 'next/link';
+import NextLink from 'next/link'
 import { ArrowForwardIcon, ArrowRightIcon } from '@chakra-ui/icons';
+import { GithubIcon } from '@/icons';
 
 export default function Header() {
 
@@ -20,13 +21,19 @@ export default function Header() {
         <Box py={5} boxShadow='sm'>
             <Container maxW={'100%'}>
                 <Flex justifyContent="space-between" alignItems={'center'}>
-                    <Link href={isAuthenticated ? "/app" : "/"}>
+                    <Link as={NextLink} href={isAuthenticated ? "/app" : "/"}>
                         <Text fontSize='2xl' fontWeight={'black'}>x2.email</Text>
                     </Link>
 
                     <div>
                         <HStack spacing={7}>
-                            <Link href={"/about"}>
+                            <Link as={NextLink} href={"https://github.com/jessetinell/x2.email"} isExternal={true}>
+                                <HStack spacing={1} >
+                                    <GithubIcon />
+                                    <Text fontWeight={'700'}>Star on Github</Text>
+                                </HStack>
+                            </Link>
+                            <Link as={NextLink} href={"/about"}>
                                 <Text fontWeight={'700'}>How it works</Text>
                             </Link>
                             {/* Check all these fields instead if isAuthenticated. If one is set due to some error, user can clear it. */}
@@ -42,7 +49,7 @@ export default function Header() {
                                     Log out
                                 </Button>
                                 :
-                                <Link href="/login">
+                                <Link as={NextLink} href="/login">
                                     <Button
                                         variant='outline'
                                         size={'lg'}

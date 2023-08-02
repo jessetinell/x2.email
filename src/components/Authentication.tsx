@@ -1,33 +1,48 @@
 "use client"
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AlertDialogBody, AlertDialogHeader, Button, Code, Img, Input, InputGroup, InputRightElement, ListItem, OrderedList, Stack, Text } from '@chakra-ui/react'
+import { AlertDialogBody, AlertDialogHeader, Button, Code, Flex, FormControl, FormLabel, HStack, Img, Input, InputGroup, InputRightElement, ListItem, OrderedList, Stack, Switch, Text, useToast } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import { ChevronRightIcon, ExternalLinkIcon, LockIcon } from '@chakra-ui/icons';
+import { ArrowForwardIcon, ChevronRightIcon, ExternalLinkIcon, LockIcon } from '@chakra-ui/icons';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '@/context/UserContext';
 import InputHelpButton from './InputHelpButton';
 
 interface IAuthenticationForm {
-    zoneId: string;
-    accountId: string;
-    accessToken: string;
+    accountId?: string;
+    zoneId?: string;
+    accessToken?: string;
+    quickAuth?: string;
 }
 
 export default function Authentication() {
 
     const router = useRouter();
     const { authorize, isAuthenticated, isLoading } = useContext(UserContext);
+    const [isQuickAuth, setIsQuickAuth] = useState(false);
+    const toast = useToast()
 
     const { register, handleSubmit } = useForm<IAuthenticationForm>();
 
     const onSubmit = async (data: IAuthenticationForm) => {
-        let a = await authorize(data.accountId, data.zoneId, data.accessToken);
+        let { accountId, zoneId, accessToken, quickAuth } = data;
+
+        if (isQuickAuth && quickAuth) {
+            [accountId, zoneId, accessToken] = quickAuth.split(",");
+        }
+
+        if (!accountId || !zoneId || !accessToken) {
+            toast({
+                title: "Please fill in all fields",
+                status: "error"
+            })
+            return;
+        }
+
+        await authorize(accountId, zoneId, accessToken);
     }
 
     useEffect(() => {
-        console.log("isAuthenticated", isAuthenticated)
-        console.log("isLoading", isLoading)
 
         if (!isLoading && isAuthenticated) {
             router.push("/app");
@@ -44,7 +59,7 @@ export default function Authentication() {
 
                 <OrderedList spacing={2}>
                     <ListItem>
-                        Log in to your Cloudflare dashboard and copy <Code>Account ID</Code> and <Code>Zone ID</Code> from your domain's overview page.
+                        Log in to your Cloudflare dashboard, choose a zone/domain, and copy <Code>Account ID</Code> and <Code>Zone ID</Code> from your domain's overview page.
                     </ListItem>
                 </OrderedList>
                 <br />
@@ -58,9 +73,37 @@ export default function Authentication() {
         </>} />
     }
 
-    return (
-        <Stack as="form" onSubmit={handleSubmit(onSubmit)} spacing={4}>
-            <Text fontSize={'xl'} fontWeight={'bold'}>Cloudflare info</Text>
+    const QuickAuth = () => (
+        <>
+            <InputGroup>
+                <Input placeholder="Quick Auth" type="password" tabIndex={3} defaultValue={process.env.NEXT_PUBLIC_QUICK_AUTH} {...register("quickAuth", { required: true })} />
+                <InputRightElement>
+                    <InputHelpButton content={<>
+                        <AlertDialogHeader fontSize='2xl' fontWeight='bold'>
+                            Quick Auth
+                        </AlertDialogHeader>
+                        <AlertDialogBody>
+                            <Text>
+                                "Quick Auth" is useful if you use a password manager and want to log in to x2.email faster.
+                                <br />
+                                <br />
+                                It's one text field that contains Account ID, Zone ID and Access token, separated by a comma (","). Create this yourself and store it in your password manager.
+                                <br />
+                                <br />
+                                Format: <Code>Account ID, Zone ID, Access token</Code>
+                                <br />
+                                <br />
+                                Example: <Code>123,456,abc</Code>
+                            </Text>
+                        </AlertDialogBody>
+                    </>} />
+                </InputRightElement>
+            </InputGroup>
+        </>
+    )
+
+    const RegularAuth = () => (
+        <>
             <InputGroup>
                 <Input placeholder="Account ID" tabIndex={1} defaultValue={process.env.NEXT_PUBLIC_ACCOUNT_ID}  {...register("accountId", { required: true })} />
                 <InputRightElement>
@@ -116,16 +159,44 @@ export default function Authentication() {
                     </>} />
                 </InputRightElement>
             </InputGroup>
+        </>
+    )
 
-            <Button type="submit"
-                iconSpacing="5"
-                isLoading={isLoading}
-                tabIndex={4}
-                rightIcon={<LockIcon />}
-                colorScheme="blue" size={"lg"}>
-                Store Securely in Browser
-            </Button>
-            <Text fontSize={'xs'} textAlign={'center'}>Encrypted and stored locally on your browser</Text>
-        </Stack>
+    return (
+        <>
+            <Stack as="form" onSubmit={handleSubmit(onSubmit)} spacing={4} mt={20}>
+
+                <Flex justifyContent={'space-between'} alignItems={'center'}>
+                    <Text fontSize={'xl'} fontWeight={'bold'}>Cloudflare info</Text>
+
+                    <div>
+                        <FormControl display='flex' alignItems='center'>
+                            <FormLabel htmlFor='email-alerts' mb='0'>
+                                Quick auth
+                            </FormLabel>
+                            <Switch id='email-alerts'
+                                onChange={(e) => setIsQuickAuth(e.target.checked)}
+                            />
+                        </FormControl>
+                    </div>
+                </Flex>
+
+                {isQuickAuth ? <QuickAuth /> : <RegularAuth />}
+
+                <Button type="submit"
+                    iconSpacing="2"
+                    isLoading={isLoading}
+                    tabIndex={4}
+                    rightIcon={<ArrowForwardIcon />}
+                    colorScheme="green" size={"lg"}>
+                    {/* Store Securely in Browser */}
+                    Encrypt and continue
+                </Button>
+                <HStack justifyContent={'center'}>
+                    <LockIcon />
+                    <Text fontSize={'xs'} textAlign={'center'}>Encrypted and stored locally on your browser</Text>
+                </HStack>
+            </Stack>
+        </>
     )
 }

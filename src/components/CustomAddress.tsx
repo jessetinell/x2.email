@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button, Input, Tr, Td, Switch, Select, HStack, InputGroup, InputRightAddon } from "@chakra-ui/react";
+import { Button, Input, Tr, Td, Switch, Select, HStack, InputGroup, InputRightAddon, useToast } from "@chakra-ui/react";
 import { CheckIcon, CloseIcon, DeleteIcon, EditIcon } from '@chakra-ui/icons'
 import { ICustomAddress } from "@/types";
 import CloudflareService from "@/services/cloudflare";
@@ -12,6 +12,8 @@ interface Props {
 }
 
 const Route: React.FC<Props> = (props) => {
+
+    const toast = useToast()
 
     const [isEditing, setIsEditing] = useState<boolean>(false);
     const [isSaving, setIsSaving] = useState<boolean>(false);
@@ -37,7 +39,10 @@ const Route: React.FC<Props> = (props) => {
             const form = getValues();
 
             if (!form.from) {
-                alert("Please enter an alias")
+                toast({
+                    title: "Please enter an alias",
+                    status: "error"
+                })
                 return;
             }
 

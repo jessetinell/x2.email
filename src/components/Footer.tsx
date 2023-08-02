@@ -1,12 +1,12 @@
 "use client"
-import { Box, Button, Container, Flex, HStack, Text, VStack } from '@chakra-ui/react'
+import { Button, Container, Text, VStack } from '@chakra-ui/react'
 import Link from 'next/link';
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 
 export default function Footer() {
 
     return (
-        <Flex py={5} alignItems={'center'} justifyContent={'center'} boxShadow='sm' height={400} backgroundColor={'black'} marginTop={150}>
+        <Container borderTop={'1px solid #e2e2e2'} height={400} marginTop={130} paddingTop={20} maxW={900} boxShadow='sm' centerContent>
             <VStack>
                 <Text fontSize={['6xl']} mb={10} textAlign={'center'} fontWeight={'bold'}>
                     Protect your inbox today.
@@ -19,6 +19,6 @@ export default function Footer() {
                     </Button>
                 </Link>
             </VStack>
-        </Flex>
+        </Container>
     );
 }
