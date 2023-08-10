@@ -1,9 +1,11 @@
 "use client"
 import { useContext, useEffect } from 'react';
-import { Box, Button, Container, Heading, Text, Image, HStack, VStack } from '@chakra-ui/react'
+import { Box, Button, Container, Heading, Text, Image, HStack, VStack, SimpleGrid, UnorderedList, ListItem, Flex, Code, Center } from '@chakra-ui/react'
 import { UserContext } from '@/context/UserContext';
 import Link from 'next/link';
-import { AppleMailIcon, GmailIcon, OutlookIcon, ProtonMailIcon } from '@/icons';
+import { AppleMailIcon, GmailIcon, OutlookIcon, ProtonMailIcon, Rainbow } from '@/icons';
+import { H2, H3 } from '@/components/Headings';
+import { ExternalLinkIcon, LockIcon } from '@chakra-ui/icons';
 
 export default function Page() {
 
@@ -15,131 +17,228 @@ export default function Page() {
     }
   }, [isAuthenticated])
 
+  const ListItemWithIcon = ({ children, icon, ...props }: any) => (
+    <HStack spacing={2} mb={5} alignItems={'top'} {...props}>
+      {icon}
+      <Text>{children}</Text>
+    </HStack>
+  );
+
   return (
     <main>
 
+
       <Container maxW={870}>
-        <VStack spacing={35} textAlign={'center'} py={70}>
+        <Flex minHeight={'81vh'} alignItems={'center'} justifyContent={'center'} mb={10}>
+          <VStack spacing={35} textAlign={'center'} py={70}>
 
-          <Box bg="green.100" rounded={10} padding={3}>
-            <b>The #1 privacy lifehack</b>
-          </Box>
+            <Box bg="green.100" rounded={7} padding={[2, 3]} fontSize={['x-small', 'lg']}>
+              <b>Privacy lifehack</b>
+            </Box>
 
-          <Heading as="h1" fontSize={['3xl', '5xl', '7xl']} fontWeight={900} m={0} >
-            Protect your inbox from unwanted emails
-            {/* using Cloudflare<Text as="span" fontSize={['sm§', 'lg']} fontWeight={'400'} verticalAlign={'super'}>®</Text> */}
-          </Heading>
+            <Heading as="h1" fontSize={['3xl', '5xl', '7xl']} fontWeight={900} m={0}>
+              Protect your inbox from unwanted junk
+            </Heading>
 
-          <div>
-            <Text fontSize={['md', 'xl']}>
-              Free unlimited disposable emails with uncompromised privacy.
-            </Text>
-            <br />
-            <br />
+            <div>
+              <Box maxW={660}>
+                <Text fontSize={['md', 'xl']} lineHeight={2}>
+                  Connect 200 free <Text as="span" borderBottom={'2px solid'} borderColor={'orange.300'}>disposable emails</Text> to your private email.
+                  Maintain full privacy and control over your inbox.
+                </Text>
 
-            <Text fontSize={'sm'} mb={3}>Works with any email provider</Text>
+              </Box>
 
-            <HStack spacing={4} justifyContent={'center'}>
-              <GmailIcon boxSize={10} />
-              <OutlookIcon boxSize={10} />
-              <AppleMailIcon boxSize={10} />
-              <ProtonMailIcon boxSize={10} />
-            </HStack>
+              <HStack spacing={2} justifyContent={'center'} mt={['2']}>
+                <Link href={"#get-started"}>
+                  <Button
+                    mt={8}
+                    colorScheme="orange"
+                    size={['md', 'lg']}
+                  >
+                    Protect my inbox
+                  </Button>
+                </Link>
+              </HStack>
 
+              <HStack spacing={4} justifyContent={'center'} mt={'60px'} mb={2}>
+                <GmailIcon boxSize={[6, 8]} />
+                <OutlookIcon boxSize={[6, 8]} />
+                <AppleMailIcon boxSize={[6, 8]} />
+                <ProtonMailIcon boxSize={[6, 8]} />
+              </HStack>
+              <Text fontSize={['xs', 'sm']} mb={3} color="gray.500">Works with every email provider</Text>
+            </div>
 
-            <br />
-            {/* <b>Free</b>* (you need a domain)
-              <br /> */}
-
-            {/* All you need is a domain in Cloudflare. */}
-            {/* All through your own domain and Cloudflare Email Routing. */}
-
-            {/* No registreation. No accounts. You only need your Cloudflare account and a domain connected to it. */}
-            <HStack spacing={2} justifyContent={'center'}>
-              <Link href={"/start"}>
-                <Button
-                  mt={8}
-                  colorScheme="blue"
-                  size="lg"
-                >
-                  Get started
-                </Button>
-              </Link>
-            </HStack>
-          </div>
-
-        </VStack>
+          </VStack>
+        </Flex>
       </Container>
+
 
       <Container maxW={820}>
+        <Box textAlign={'center'}>
+          <H2 mt={0} mb={2}>
+            Your email...
+          </H2>
+        </Box>
+        <SimpleGrid spacing={10} columns={{ sm: 1, md: 2 }} justifyContent={'center'} alignContent={'center'}>
+          <Box maxW="md">
+            <Heading as={'h3'} fontSize={'2xl'} mb={2}>
+              ❌ Before
+            </Heading>
+            <Box px={5} py={6} rounded={10} backgroundColor={'red.100'}>
+              <UnorderedList spacing={4} fontSize={'lg'}>
+                <ListItem>
+                  Use the same email for everything
+                </ListItem>
+                <ListItem>
+                  Tons of promotional emails you never signed up for
+                </ListItem>
+                <ListItem>
+                  Spam from bots and scammers
+                </ListItem>
+                <ListItem>
+                  Unsubscribe buttons that doesn't work
+                </ListItem>
+                <ListItem>
+                  A hassle to keep clean
+                </ListItem>
+                <ListItem>
+                  Email address being sold on the darknet due to data leaks
+                </ListItem>
+              </UnorderedList>
+            </Box>
+          </Box>
+          <Box maxW="md">
+            <Heading as={'h3'} fontSize={'2xl'} mb={2}>
+              ✅ After
+            </Heading>
+            <Box px={5} py={6} rounded={10} backgroundColor={'green.100'}>
+              <UnorderedList spacing={4} fontSize={'lg'}>
+                <ListItem>
+                  New unique email for every service
+                </ListItem>
+                <ListItem>
+                  Be the boss of your email. You have full control.
+                </ListItem>
+                <ListItem>
+                  Never miss an important email in a sea of spam
+                </ListItem>
+                <ListItem>
+                  Keep your identity more safe and secure
+                </ListItem>
+                <ListItem>
+                  Hide your private email from darknet data breaches
+                </ListItem>
+              </UnorderedList>
+            </Box>
 
-        <Text fontSize={['lg']}>
-          Your email address is a universal key for a myriad of online services like shopping, streaming, banking, hotel booking, gaming, social media, etc.
+          </Box>
+
+        </SimpleGrid>
+        <Box mt={20}>
+          <H3>The problem with email addresses</H3>
+          <Text fontSize={['md', 'lg']}>
+            Your email address is a universal key for a ton of online services like shopping, coupon hunting, newsletter subscriptions, hotel bookings, social media, gaming, etc.
+            <br />
+            <br />
+            Each time you sign up for a new service, you're also welcoming a new flood of promotional junk.
+            <br />
+            <br />
+            Not to forget the possibility of each service you've ever signed up for being hacked and your email address then being sold on the darknet.
+            <br />
+            <br />
+            So, it's not suprising your inbox also doubles as the hottest club in town for pesky spam emails and an endless flow of promotional junk.
+          </Text>
+
+          <H3>Rule #1 = Never share your <u>real</u> email address</H3>
+          <Text fontSize={['md', 'lg']}>
+            The best way to keep your inbox clean is to not share your private email with any website/app.
+            <br />
+            <br />
+            When you sign up for a new service, it's better to use <b>disposable emails</b> instead of your real email.
+          </Text>
+          <H3>A unique email for each service</H3>
+          <Text fontSize={['md', 'lg']}>
+            With the help of <b>x2.email</b> and Cloudflare® you can create 200 free disposable emails that forward emails to your private main inbox. Like demonstrated below.
+          </Text>
+          <Image src="/img/how-it-works-illustration.svg" py={3} />
           <br />
           <br />
-          But it also doubles as the hottest club in town for pesky spam mails and an uncontrollable amount of promotional emails that you never asked for.
-          <br />
-          <br />
-          Imagine an alternate reality. One where your inbox isn't a jumbled mess but an oasis of organization. No more spam, no more unsolicited promotions. Just the emails you want, waiting neatly for your attention.
-          <br />
-          <br />
-
-          A clean inbox it what you can get by using Cloudflare Email Routing.
-          Create as many email addresses as you need, all redirected to your existing mailbox (Gmail/Outlook/Apple Mail).
-          <br />
-          <br />
-          Hopefully our tool can make the digital world a tad bit simpler for you.
-        </Text>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        USP: Disable certain addresses in case they get spammed
-
-        <HStack spacing={15}>
-          <Image src="https://via.placeholder.com/150" borderRadius={'50%'} />
-          <HStack spacing={2} align={'top'}>
-            <Text as="span" lineHeight={1} fontSize={'5xl'} fontWeight={'bold'}>"</Text>
-            <Text>
-              The "Unsubscribe" button feels like a joke, <u>and I'm done</u>. It's time to take back control and <Text as="span" fontWeight={'bold'} color='red' >stop</Text> to every unwanted, intrusive, promotional email from disrespecting my inbox.
-            </Text>
-          </HStack>
-
-        </HStack>
-
-        - No account needed. No registration. No email. No password. Only your Cloudflare credentials.
-        - Privacy first. No data goes through our servers. We don't store anything about you or your emails.
-
-        <Text fontSize={'xl'} mt={5} textAlign={'center'}>
-          Self-hosting
-        </Text>
-        <Text>
-          Deploy on Vercel.
-          Clone the repo.
-          Use Cloudflare dashboard.
-        </Text>
-
-
-        <Button>
-          Login
-        </Button>
-        <br />
-        <br />
-        <br />
-        <p>
-          Open source.
-          <br />
-          Privacy friendly.
-          <br />
-
-        </p>
-        <p>
-          Coming soon: Chrome extension.
-
-        </p>
+          <Text fontSize={['md', 'lg']}>
+            If you start receiving junk to any of your disposable emails, you can simply disable it.
+          </Text>
+          <Image src="/img/how-it-works-illustration-disabled.svg" py={3} />
+        </Box>
       </Container>
+
+
+      <Box>
+
+        <Container maxW={820} mt={140}>
+          <H2 fontSize={['4xl', '5xl', '7xl']} id="get-started">
+            Get started
+          </H2>
+          <H3 mb={3}>
+            You will need
+          </H3>
+          <UnorderedList spacing={3} mt={'2'} fontSize={'lg'}>
+            <ListItem>
+              A <Link href={'https://cloudflare.com'} target='_blank'><u>Cloudflare</u>®</Link> account
+            </ListItem>
+            <ListItem>
+              A domain connected to Cloudflare®
+            </ListItem>
+          </UnorderedList>
+
+          <H3 mb={3}>
+            About the solution
+          </H3>
+          <Text>
+            <b>x2.email</b> is a minimalistic user interface built on top of Cloudflare's Email Routing service.
+            <br />
+            <br />
+            x2.email communicates directly with the Cloudflare API through a secure proxy (due to CORS).
+            You will authenticate using your own Cloudflare Account ID, Zone ID and Access token.
+            <br />
+            <br />
+            You don't need to create an account or share any personal information with us.
+          </Text>
+
+          <H3 mb={4}>
+            The benefits of using x2.email
+          </H3>
+          <Text fontSize={'lg'} color={'gray.500'} mb={5}>You <i>can</i> use Cloudflare's dashboard to manage your email aliases. But I mean...</Text>
+          <Box fontSize={['lg']} p={2}>
+            <ListItemWithIcon icon={<span>⚡️</span>}>
+              <b>13x</b> faster email alias management compared to using Cloudflare's dashboard
+            </ListItemWithIcon>
+            <ListItemWithIcon icon={<span>💰</span>}>
+              100% free
+            </ListItemWithIcon>
+            <ListItemWithIcon icon={<span>🚀</span>}>
+              No registration or account is needed
+            </ListItemWithIcon>
+            <ListItemWithIcon icon={<span>🔒</span>}>
+              Privacy-first: We don't store any user data
+            </ListItemWithIcon>
+            <ListItemWithIcon icon={<span>🧁</span>}>
+              Open source. You can view the source code and host this application yourself for free on Vercel (please consider giving the repo a star though: <Link href="https://github.com/jessetinell/x2.email"><u>Github</u> <ExternalLinkIcon />)</Link>
+            </ListItemWithIcon>
+          </Box>
+
+          <Box mt={100} textAlign={'center'} p={10} backgroundColor={'orange.100'} rounded={10}>
+            <H2 mt={0} color={'orange.900'} >Coming soon</H2>
+            <Text fontSize={'2xl'} color={'orange.900'} mb={5}>
+              Chrome extension
+              <br />
+              Android app
+              <br />
+              iOS app
+            </Text>
+          </Box>
+        </Container>
+      </Box >
 
     </main >
   )

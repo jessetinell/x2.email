@@ -3,9 +3,9 @@ body{
         content: " ";
         height: 4px;
         display: block;
-        background: linear-gradient(270deg, orange, yellow);
+        background: linear-gradient(270deg, yellow,#f6ad55);
         background-size: 200% 200%;
-        animation: gradientAnimation 6s ease-in-out infinite;
+        animation: gradientAnimation 3s ease-in-out infinite;
     }
 }
 

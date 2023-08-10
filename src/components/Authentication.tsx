@@ -1,12 +1,13 @@
 "use client"
 import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AlertDialogBody, AlertDialogHeader, Button, Code, Flex, FormControl, FormLabel, HStack, Img, Input, InputGroup, InputRightElement, ListItem, OrderedList, Stack, Switch, Text, useToast } from '@chakra-ui/react'
+import { AlertDialogBody, AlertDialogHeader, Button, Code, Flex, FormControl, FormLabel, HStack, Img, Input, InputGroup, InputRightElement, ListItem, OrderedList, Stack, Switch, Text, UnorderedList, useToast } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { ArrowForwardIcon, ChevronRightIcon, ExternalLinkIcon, LockIcon } from '@chakra-ui/icons';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '@/context/UserContext';
 import InputHelpButton from './InputHelpButton';
+import { H3 } from "./Headings";
 
 interface IAuthenticationForm {
     accountId?: string;
@@ -87,13 +88,14 @@ export default function Authentication() {
                                 "Quick Auth" is useful if you use a password manager and want to log in to x2.email faster.
                                 <br />
                                 <br />
-                                It's one text field that contains Account ID, Zone ID and Access token, separated by a comma (","). Create this yourself and store it in your password manager.
+                                It's a comma-separated string containing Account ID, Zone ID and Access token.
                                 <br />
                                 <br />
-                                Format: <Code>Account ID, Zone ID, Access token</Code>
+                                <b>Format: </b>
+                                <br /><Code>Account ID, Zone ID, Access token</Code>
                                 <br />
                                 <br />
-                                Example: <Code>123,456,abc</Code>
+                                <b>Example:</b><br /> <Code>123,456,abc</Code>
                             </Text>
                         </AlertDialogBody>
                     </>} />
@@ -149,12 +151,25 @@ export default function Authentication() {
                             </OrderedList>
                             <br />
                             <NextLink href="https://dash.cloudflare.com/profile/api-tokens" target='_blank'>
-                                <Button colorScheme='orange' rightIcon={<ExternalLinkIcon />} size={'lg'}>
+                                <Button colorScheme='orange' rightIcon={<ExternalLinkIcon />} size={'md'}>
                                     Open token manager
                                 </Button>
                             </NextLink>
-                            <Text mt='10' mb='2'>📸 Screenshot</Text>
-                            <Img src="/img/cloudflare-custom-token.png" boxShadow='xs' rounded='md' mx='auto' />
+                            <h3>Permissions explained</h3>
+                            <OrderedList spacing={3}>
+                                <ListItem>
+                                    <Code>Email Routing Addresses | Read</Code><br />Needed to list destination email addresses
+                                </ListItem>
+                                <ListItem>
+                                    <Code>Email Routing Rules | Edit</Code>
+                                    <br />
+                                    Listing, creating, editing and deleting of email rules (aliases)
+                                </ListItem>
+                                <ListItem>
+                                    <Code>Zone Settings | Read</Code>
+                                    <br />Listing of all the zones in your Cloudflare account (or the zone you select in the "Zone Resources" section)
+                                </ListItem>
+                            </OrderedList>
                         </AlertDialogBody>
                     </>} />
                 </InputRightElement>
@@ -167,8 +182,7 @@ export default function Authentication() {
             <Stack as="form" onSubmit={handleSubmit(onSubmit)} spacing={4} mt={20}>
 
                 <Flex justifyContent={'space-between'} alignItems={'center'}>
-                    <Text fontSize={'xl'} fontWeight={'bold'}>Cloudflare info</Text>
-
+                    <H3 m={0}>Cloudflare info</H3>
                     <div>
                         <FormControl display='flex' alignItems='center'>
                             <FormLabel htmlFor='email-alerts' mb='0'>
@@ -188,13 +202,12 @@ export default function Authentication() {
                     isLoading={isLoading}
                     tabIndex={4}
                     rightIcon={<ArrowForwardIcon />}
-                    colorScheme="green" size={"lg"}>
-                    {/* Store Securely in Browser */}
-                    Encrypt and continue
+                    colorScheme="orange" size={"lg"}>
+                    Connect to Cloudflare
                 </Button>
                 <HStack justifyContent={'center'}>
                     <LockIcon />
-                    <Text fontSize={'xs'} textAlign={'center'}>Encrypted and stored locally on your browser</Text>
+                    <Text fontSize={'xs'} textAlign={'center'}>The information will be encrypted and stored locally on your browser</Text>
                 </HStack>
             </Stack>
         </>

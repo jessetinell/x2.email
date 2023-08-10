@@ -5,7 +5,7 @@ import CloudflareEmailRouterSettings from '@/components/CloudflareEmailRouterSet
 export default function Page() {
   return (
     <main>
-      <Container maxW={1080}>
+      <Container maxW={700} pt={8}>
         <CloudflareEmailRouterSettings />
       </Container>
     </main>

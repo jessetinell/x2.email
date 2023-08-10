@@ -1,7 +1,8 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import encryption from '@/utils/encryption';
-import CloudflareService from '@/services/cloudflare';
+import { CloudflareApiClient } from '@/services/cloudflare';
+import { CloudflareListEmailDestinationsResponse } from '@/services/cloudflare/cloudflare.types';
 
 const LOCAL_STORAGE_ACCOUNT_ID = "x2-email-cloudflare_account_identifier";
 const LOCAL_STORAGE_ZONE_ID = "x2-email-cloudflare_zone_identifier";
@@ -38,25 +39,29 @@ export function UserProvider({ children }: any) {
 
     setIsLoading(true);
 
+    const apiClient = new CloudflareApiClient(accessToken);
+
     // Fetch the domain. This domain is used to create aliases.
-    const routingResponse = await CloudflareService.get(`/zones/${zoneId}/email/routing`, accessToken)
-    if (routingResponse.status === 200) {
-      setDomain(routingResponse.data.result.name);
+    // const routingResponse = await CloudflareService.get(`/zones/${zoneId}/email/routing`, accessToken)
+    const routingResponse = await apiClient.getEmailRouting(zoneId);
+
+    if (routingResponse.success) {
+      setDomain(routingResponse.result.name);
     }
 
+
     // Fetch the destination addresses. Emails will be forwarded to these addresses.
-    const destinationAddressesResponse = await CloudflareService.get(`/accounts/${accountId}/email/routing/addresses`, accessToken)
-    if (routingResponse.status === 200) {
-      setDestinationAddresses(destinationAddressesResponse.data.result?.map((result: any) => result.email))
+    const destinationAddressesResponse: CloudflareListEmailDestinationsResponse = await apiClient.getDestinations(accountId);
+
+    if (routingResponse.success) {
+      setDestinationAddresses(destinationAddressesResponse.result?.map((result: any) => result.email) || [])
     }
 
     setIsLoading(false);
 
-    return routingResponse.status === 200 && destinationAddressesResponse.status === 200;
+    return routingResponse.success && destinationAddressesResponse.success;
 
   }
-
-
 
   useEffect(() => {
 

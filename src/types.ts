@@ -3,7 +3,7 @@ export interface Action {
     value: Array<string>;
 }
 
-export interface ICustomAddress {
+export type CustomAddress = {
     tag: string | null;
     from: string;
     to: string;
