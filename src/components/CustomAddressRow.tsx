@@ -71,6 +71,7 @@ const CustomAddressRow: React.FC<Props> = (props) => {
 
             const isInsert = !customAddress?.tag;
 
+            const alias = `${form.from}@${domain}`;
             const rule: CloudflareEmailRule = {
                 tag: form.tag || null,
                 actions: [
@@ -86,7 +87,7 @@ const CustomAddressRow: React.FC<Props> = (props) => {
                     {
                         field: "to",
                         type: "literal",
-                        value: `${form.from}@${domain}`
+                        value: alias
                     }
                 ]
             }
@@ -99,6 +100,11 @@ const CustomAddressRow: React.FC<Props> = (props) => {
                 if (updatedCustomAddress) {
                     props.onChange(updatedCustomAddress, "insert");
                 }
+
+                navigator.clipboard.writeText(customAddress.from)
+                toast({
+                    title: `${alias} copied to clipboard`
+                })
 
                 // Reset the form used for creating this new alias
                 reset()
