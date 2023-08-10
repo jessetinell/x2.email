@@ -132,20 +132,9 @@ export const ProtonMailIcon = (props: any) => (
 )
 
 
-export const Rainbow = (props: any) => (
-  <Icon viewBox="0 0 272 8" {...props}>
-    <svg width="272" height="8" viewBox="0 0 272 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="evenodd" clipRule="evenodd" d="M269.324 7.99445C165.26 1.51861 48.1761 5.29673 2.66743 7.99495C1.28982 8.07663 0.0981205 7.15583 0.00570267 5.93829C-0.0867152 4.72075 0.955142 3.66752 2.33276 3.58584C47.9765 0.879607 165.306 -2.90852 269.675 3.58635C271.053 3.67205 272.091 4.72832 271.994 5.94559C271.897 7.16285 270.702 8.08016 269.324 7.99445Z">
-      </path>
-      <defs>
-        <linearGradient id="paint0_linear_999_11627" x1="24.9606" y1="6.97522" x2="209.694" y2="-91.8367" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#3D1DFF"></stop>
-          <stop offset="0.223953" stopColor="#6147FF"></stop>
-          <stop offset="0.46354" stopColor="#D451FF"></stop>
-          <stop offset="0.750004" stopColor="#EC458D"></stop>
-          <stop offset="1" stopColor="#FFCA8B"></stop>
-        </linearGradient>
-      </defs>
-    </svg>
+
+export const DiceIcon = (props: any) => (
+  <Icon viewBox="0 0 20 20" {...props}>
+    <path fill="#000" fill-rule="evenodd" d="M10 8.105a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM18 3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V3Zm2-1v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2ZM6 8.105a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm2 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
   </Icon>
 );

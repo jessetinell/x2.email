@@ -1,11 +1,11 @@
 "use client"
 import { useContext, useEffect } from 'react';
-import { Box, Button, Container, Heading, Text, Image, HStack, VStack, SimpleGrid, UnorderedList, ListItem, Flex, Code, Center } from '@chakra-ui/react'
+import { Box, Button, Container, Heading, Text, Image, HStack, VStack, SimpleGrid, UnorderedList, ListItem, Flex } from '@chakra-ui/react'
 import { UserContext } from '@/context/UserContext';
 import Link from 'next/link';
-import { AppleMailIcon, GmailIcon, OutlookIcon, ProtonMailIcon, Rainbow } from '@/icons';
+import { AppleMailIcon, GmailIcon, OutlookIcon, ProtonMailIcon } from '@/icons';
 import { H2, H3 } from '@/components/Headings';
-import { ExternalLinkIcon, LockIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 export default function Page() {
 
