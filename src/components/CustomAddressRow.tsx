@@ -13,7 +13,9 @@ import {
     Box,
     Text,
     FormLabel,
-    FormControl
+    FormControl,
+    HStack,
+    Tooltip
 } from "@chakra-ui/react";
 import { ArrowForwardIcon, CloseIcon, DeleteIcon, EditIcon } from '@chakra-ui/icons'
 import { UserContext } from '@/context/UserContext';
@@ -211,21 +213,33 @@ const CustomAddressRow: React.FC<Props> = (props) => {
     return (
         <>
             <Flex width="100%" py={2} alignItems="center" justifyContent="space-between" color={customAddress.enabled ? 'black' : 'gray.400'}>
-                <Text color={customAddress.enabled ? "green.300" : "red.300"} fontSize={'3xl'} mr={2}>•</Text>
+                <HStack spacing={2}>
+                    <Button onClick={() => setIsEditing(true)} size={'sm'} variant={'ghost'}>
+                        <EditIcon />
+                    </Button>
+                    <Text color={customAddress.enabled ? "green.300" : "red.300"} fontSize={'3xl'} mr={1}>•</Text>
+                </HStack>
                 <Flex lineHeight={1}>
                     <Flex flex={2} alignItems="center">
-                        {customAddress.from && <><b>{customAddress.from.split("@")[0]}</b>@{customAddress.from.split("@")[1]}</>}
+                        <Tooltip label='Copy' placement="top" >
+                            <a onClick={() => {
+                                navigator.clipboard.writeText(customAddress.from)
+                                toast({
+                                    title: "Copied to clipboard"
+                                })
+                            }}>
+                                {customAddress.from && <><b>{customAddress.from.split("@")[0]}</b>@{customAddress.from.split("@")[1]}</>}
+                            </a>
+                        </Tooltip>
                     </Flex>
-                    <ArrowForwardIcon mx={2} />
+                    <ArrowForwardIcon mx={2} color={'gray.400'} />
                     <Flex flex={2} alignItems="center">
                         <Text as={customAddress.enabled ? 'p' : 's'}>{customAddress.to}</Text>
                     </Flex>
 
                 </Flex>
                 <Flex flex={2} alignItems="center" justifyContent="flex-end">
-                    <Button onClick={() => setIsEditing(true)} mr={2}>
-                        Edit <EditIcon ml={2} />
-                    </Button>
+
 
                 </Flex>
             </Flex>
