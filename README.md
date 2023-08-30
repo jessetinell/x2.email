@@ -1,19 +1,20 @@
 # x2.email - DIY Disposable Email Service using Cloudflare
-Welcome to `x2.email`, a minimalistic app for managing disposable emails. Protect your inbox from the onslaught of unwanted emails and take control of your email privacy.
+`x2.email` is a minimalistic app for managing disposable emails ("Custom addresses") on Cloudflare. Protect your inbox from the onslaught of unwanted emails and take control of your email privacy.
 
 ## 📌 Problem Statement
-Your email address serves as a universal key to numerous online services. Every new service you sign up for brings with it a deluge of promotional junk. Not to mention the lurking risk of data breaches, which may expose your email on the darknet. That's why, as a golden rule, you should never share your real email address.
+Your email address serves as a universal key to numerous online services. Every new service you sign up for brings with it a deluge of promotional junk. Not to mention the lurking risk of data breaches, which may expose your email on the darknet.
 
 ## 🌟 Solution
-With the help of `x2.email` and Cloudflare®, create up to 200 free disposable emails that forward right to your primary inbox. Start receiving junk? Simply dispose of the email.
+The easiest way to stop receiving junk emails is to not share you email address to begin with. Not share your *real* email address, at least.
+Instead, you can use disposable emails. One new address for each online service.
+With Cloudflare Email Routing you can create up to 200 free disposable emails that forward emails straight to your primary inbox (Gmail, Outlook, Apple Mail, etc.).
+`x2.email`is a minimalistic app for managing of your disposable emails in Cloudflare.
 
 ## 🚀 Features
-- **Sleek Interface:** A minimalistic UI built atop Cloudflare's Email Routing service.
-- **Direct Communication:** x2.email communicates directly with the Cloudflare API
-- **No Strings Attached:** No registration, no personal info sharing, and 100% free.
-- **Faster Alias Management:** Set up email aliases 13x faster than using Cloudflare's dashboard.
-- **Privacy First:** No user data is stored.
-- **Open Source Goodness:** Host the application yourself for free on Vercel. Don't forget to star the repo!
+- **Sleek Interface:** A minimalistic UI. 13x faster than using Cloudflare's dashboard.
+- **Privacy First:** No registration, no personal info sharing.
+- **Direct Communication:** x2.email communicates directly with the Cloudflare API. `x2.email` has no database or server.
+- **Open Source Goodness:** Host the application yourself for free (optional) or modify the code to your liking. Don't forget to star the repo!
 
 ## 🧰 Getting Started
 
