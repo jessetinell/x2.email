@@ -1,5 +1,5 @@
 # x2.email - DIY Disposable Email Service using Cloudflare
-`x2.email` is a minimalistic app for managing disposable emails ("Custom addresses") on Cloudflare. Protect your inbox from the onslaught of unwanted emails and take control of your email privacy.
+`x2.email` is a minimalistic app for managing disposable emails ("Custom addresses") in Cloudflare. Protect your inbox from the onslaught of unwanted junk emails and take control of your email privacy.
 
 ## 📌 Problem Statement
 Your email address serves as a universal key to numerous online services. Every new service you sign up for brings with it a deluge of promotional junk. Not to mention the lurking risk of data breaches, which may expose your email on the darknet.
