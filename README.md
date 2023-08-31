@@ -3,6 +3,7 @@
 
 ## 📌 Problem Statement
 Your email address serves as a universal key to numerous online services. Every new service you sign up for brings with it a deluge of promotional junk. Not to mention the lurking risk of data breaches, which may expose your email on the darknet.
+See my rant about promotional junk emails: [LINK](https://jessetinell.com/diy-disposable-email-service-using-cloudflare)
 
 ## 🌟 Solution
 The easiest way to stop receiving junk emails is to not share you email address to begin with. Not share your *real* email address, at least.
