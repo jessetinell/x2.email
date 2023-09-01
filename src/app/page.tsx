@@ -43,7 +43,7 @@ export default function Page() {
             <div>
               <Box maxW={660}>
                 <Text fontSize={['md', 'xl']} lineHeight={2}>
-                  Connect 200 free <Text as="span" borderBottom={'2px solid'} borderColor={'orange.300'}>disposable emails</Text> to your private email.
+                  Connect free <Text as="span" borderBottom={'2px solid'} borderColor={'orange.300'}>disposable emails</Text> to your private email.
                   Maintain full privacy and control over your inbox.
                 </Text>
 
@@ -160,7 +160,7 @@ export default function Page() {
           </Text>
           <H3>A unique email for each service</H3>
           <Text fontSize={['md', 'lg']}>
-            With the help of <b>x2.email</b> and Cloudflare® you can create 200 free disposable emails that forward emails to your private main inbox. Like demonstrated below.
+            With the help of <b>x2.email</b> and Cloudflare® you can create free disposable emails that forward emails to your private main inbox. Like demonstrated below.
           </Text>
           <Image src="/img/how-it-works-illustration.svg" py={3} />
           <br />

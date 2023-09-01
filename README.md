@@ -5,7 +5,7 @@ Welcome to `x2.email`, a minimalistic app for managing disposable emails. Protec
 Your email address serves as a universal key to numerous online services. Every new service you sign up for brings with it a deluge of promotional junk. Not to mention the lurking risk of data breaches, which may expose your email on the darknet. That's why, as a golden rule, you should never share your real email address.
 
 ## 🌟 Solution
-With the help of `x2.email` and Cloudflare®, create up to 200 free disposable emails that forward right to your primary inbox. Start receiving junk? Simply dispose of the email.
+With the help of `x2.email` and Cloudflare®, create free disposable emails that forward right to your primary inbox. Start receiving junk? Simply dispose of the email.
 
 ## 🚀 Features
 - **Sleek Interface:** A minimalistic UI built atop Cloudflare's Email Routing service.

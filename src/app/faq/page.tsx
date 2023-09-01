@@ -24,11 +24,6 @@ export default function Page() {
         </Heading>
         <OrderedList spacing={6} pl={5}>
           <ListItem>
-            <b>Number of addresses</b>
-            <br />
-            200 email rules (aliases) and 200 destination addresses per domain
-          </ListItem>
-          <ListItem>
             <b>Size</b>
             <br />
             Email Routing does not support messages bigger than 25 MiB
