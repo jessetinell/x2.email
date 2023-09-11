@@ -8,7 +8,7 @@ See my rant about promotional junk emails: [LINK](https://jessetinell.com/diy-di
 ## 🌟 Solution
 The easiest way to stop receiving junk emails is to not share you email address to begin with. Not share your *real* email address, at least.
 Instead, you can use disposable emails. One new address for each online service.
-With Cloudflare Email Routing you can create up to 200 free disposable emails that forward emails straight to your primary inbox (Gmail, Outlook, Apple Mail, etc.).
+With Cloudflare Email Routing you can create free disposable emails that forward emails straight to your primary inbox (Gmail, Outlook, Apple Mail, etc.).
 `x2.email`is a minimalistic app for managing of your disposable emails in Cloudflare.
 
 ## 🚀 Features
