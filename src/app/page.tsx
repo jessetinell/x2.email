@@ -43,8 +43,10 @@ export default function Page() {
             <div>
               <Box maxW={660}>
                 <Text fontSize={['md', 'xl']} lineHeight={2}>
-                  Connect free <Text as="span" borderBottom={'2px solid'} borderColor={'orange.300'}>disposable emails</Text> to your private email.
-                  Maintain full privacy and control over your inbox.
+
+                  Create <Text as="span" borderBottom={'2px solid'} borderColor={'orange.300'}>disposable email addresses</Text> linked to your private email address.
+                  {" "}
+                  No more spam. 100% inbox control.
                 </Text>
 
               </Box>
@@ -78,7 +80,7 @@ export default function Page() {
       <Container maxW={820}>
         <Box textAlign={'center'}>
           <H2 mt={0} mb={2}>
-            Your email...
+            Your email inbox...
           </H2>
         </Box>
         <SimpleGrid spacing={10} columns={{ sm: 1, md: 2 }} justifyContent={'center'} alignContent={'center'}>
@@ -89,19 +91,20 @@ export default function Page() {
             <Box px={5} py={6} rounded={10} backgroundColor={'red.100'}>
               <UnorderedList spacing={4} fontSize={'lg'}>
                 <ListItem>
-                  Use the same email for everything
+                  Promotional emails you never signed up for
                 </ListItem>
                 <ListItem>
-                  Tons of promotional emails you never signed up for
-                </ListItem>
-                <ListItem>
-                  Spam from bots and scammers
+                  Spam emails from bots and scammers
                 </ListItem>
                 <ListItem>
                   Unsubscribe buttons that doesn't work
                 </ListItem>
+                {/* <ListItem>
+                  Use the same email for every online service
+                </ListItem> */}
                 <ListItem>
-                  A hassle to keep clean
+                  {/* Struggle to keep inbox at zero */}
+                  Inbox Zero = Impossible
                 </ListItem>
                 <ListItem>
                   Email address being sold on the darknet due to data leaks
@@ -116,16 +119,20 @@ export default function Page() {
             <Box px={5} py={6} rounded={10} backgroundColor={'green.100'}>
               <UnorderedList spacing={4} fontSize={'lg'}>
                 <ListItem>
-                  New unique email for every service
+                  No promotional junk
                 </ListItem>
                 <ListItem>
-                  Be the boss of your email. You have full control.
+                  No spam
                 </ListItem>
                 <ListItem>
-                  Never miss an important email in a sea of spam
+                  More secure online identity
                 </ListItem>
+                {/* <ListItem>
+                  New unique email for every online service
+                </ListItem> */}
                 <ListItem>
-                  Keep your identity more safe and secure
+                  Inbox zero = Easy peasy
+                  {/* Full control over your inbox */}
                 </ListItem>
                 <ListItem>
                   Hide your private email from darknet data breaches
@@ -190,6 +197,11 @@ export default function Page() {
               A domain connected to Cloudflare®
             </ListItem>
           </UnorderedList>
+          <br />
+          <Text>
+            💙
+            <i> I apologize to the non-technical people who doesn't know how to get started.. <a href="mailto:contact@x2.email"><u>Send us an email</u></a> if you want to use this service without the hassle ($99/year)</i>
+          </Text>
 
           <H3 mb={3}>
             About the solution
@@ -227,7 +239,15 @@ export default function Page() {
             </ListItemWithIcon>
           </Box>
 
-          <Box mt={100} textAlign={'center'} p={10} backgroundColor={'orange.100'} rounded={10}>
+          <H3 mb={4}>
+            Demo
+          </H3>
+          <Text>In this demo, I crafted a unique email address exclusively for my Netflix account.</Text>
+          <video controls style={{ border: '3px solid #f8d53c', borderTop: 'none', borderRadius: '10px' }}>
+            <source src="https://res.cloudinary.com/jesset/video/upload/v1696073209/x2.email/demo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* <Box mt={100} textAlign={'center'} p={10} backgroundColor={'orange.100'} rounded={10}>
             <H2 mt={0} color={'orange.900'} >Coming soon</H2>
             <Text fontSize={'2xl'} color={'orange.900'} mb={5}>
               Chrome extension
@@ -236,7 +256,7 @@ export default function Page() {
               <br />
               iOS app
             </Text>
-          </Box>
+          </Box> */}
         </Container>
       </Box >
 
