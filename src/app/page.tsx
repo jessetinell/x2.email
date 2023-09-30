@@ -200,7 +200,7 @@ export default function Page() {
           <br />
           <Text>
             💙
-            <i> I apologize to the non-technical people who doesn't know how to get started.. <a href="mailto:contact@x2.email"><u>Send us an email</u></a> if you want to use this service without the hassle ($99/year)</i>
+            <i> I apologize to the non-technical people who doesn't know how to get started..</i>
           </Text>
 
           <H3 mb={3}>
