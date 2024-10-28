@@ -194,7 +194,7 @@ const CustomAddressRow: React.FC<Props> = (props) => {
                                     <Select placeholder='Select destination address' {...register("to")} fontSize={'lg'}>
                                         {destinationAddresses.map((address: string, i: number) => {
                                             const selected = (customAddress?.to && customAddress?.to === address) || (i == 0);
-                                            return <option selected={selected} value={address}>{address}</option>
+                                            return <option key={i} selected={selected} value={address}>{address}</option>
                                         })}
                                     </Select>
                                 </FormControl>
