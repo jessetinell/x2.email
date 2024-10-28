@@ -30,7 +30,6 @@ const getItem = (key: string) => {
     const encryptedData = localStorage.getItem(key);
     if (encryptedData) {
         const decryptedData = decryptData(encryptedData);
-        console.log(key, decryptedData)
         return decryptedData;
     }
     return null;
