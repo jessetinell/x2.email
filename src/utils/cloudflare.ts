@@ -18,18 +18,16 @@ function mapRuleToCustomAddress(rule: CloudflareEmailRule): CustomAddress | null
 
 }
 
-export function mapEmailRulesResponseToCustomAddressList(response: CloudflareListEmailRulesResponse): CustomAddress[] {
+export function mapEmailRulesResponseToCustomAddressList(rules: CloudflareEmailRule[]): CustomAddress[] {
 
     const customAddresses: CustomAddress[] = [];
 
-    if (response.success && response.result?.length) {
-        for (let i = 0; i < response.result.length; i++) {
+    for (let i = 0; i < rules.length; i++) {
 
-            const customAddress = mapRuleToCustomAddress(response.result[i]);
+        const customAddress = mapRuleToCustomAddress(rules[i]);
 
-            if (customAddress) {
-                customAddresses.push(customAddress);
-            }
+        if (customAddress) {
+            customAddresses.push(customAddress);
         }
     }
 

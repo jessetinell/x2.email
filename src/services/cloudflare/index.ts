@@ -54,14 +54,36 @@ export class CloudflareApiClient {
     );
   }
 
-  async getEmailRules(zoneId: string) {
-    return await fetcher<CloudflareListEmailRulesResponse>(
-      `${this.baseUrl}/zones/${zoneId}/email/routing/rules`,
-      {
-        headers: this.getHeaders(),
-      },
-    );
+  async getEmailRules(zoneId: string): Promise<CloudflareEmailRule[]> {
+    let allRules: CloudflareEmailRule[] = [];
+    let page = 1;
+
+    while (true) {
+      const response = await fetcher<CloudflareListEmailRulesResponse>(
+        `${this.baseUrl}/zones/${zoneId}/email/routing/rules?page=${page}&per_page=50`,
+        {
+          headers: this.getHeaders(),
+        },
+      );
+
+      if (response.result) {
+        allRules = allRules.concat(response.result);
+      }
+
+      if (!response.result || response.result.length === 0) {
+        break;
+      }
+
+      if (allRules.length >= response.result_info.total_count) {
+        break;
+      }
+
+      page++;
+    }
+
+    return allRules;
   }
+
 
   async createEmailRule(zoneId: string, rule: Omit<CloudflareEmailRule, "tag">) {
     return await fetcher<CloudflareCreateEmailRuleResponse>(
