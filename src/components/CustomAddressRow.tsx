@@ -113,7 +113,7 @@ const CustomAddressRow: React.FC<Props> = (props) => {
                     props.onChange(updatedCustomAddress, "insert");
                 }
 
-                navigator.clipboard.writeText(customAddress.from)
+                navigator.clipboard.writeText(alias)
                 toast({
                     title: `${alias} copied to clipboard`
                 })
